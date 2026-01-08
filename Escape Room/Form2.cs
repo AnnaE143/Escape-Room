@@ -15,7 +15,7 @@ namespace Escape_Room
         Boolean gameRunning = true;
         Boolean questionFound = false;
         Boolean keyFound = false;
-        Boolean doorOpen = false;
+        double elapsedTime;
 
         public Form2()
         {
@@ -24,8 +24,8 @@ namespace Escape_Room
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
-
+            elapsedTime = 00.00;
+            stopTimer.Enabled = true;
         }
 
 
@@ -39,13 +39,13 @@ namespace Escape_Room
                 switch (input)
                 {
                     case "look":
-                        outputLabel.Text = "You can see some rusty pipes, a desk and a locked door. On the desk is a safe with a number lock on it.";
+                        outputLabel.Text = "You can see some rusty pipes, a desk and a locked door. On the desk is a safe with a lock on it.";
                         break;
 
                     case "search pipe":
                         if (questionFound == false)
                         {
-                            outputLabel.Text = "What belongs to you but is used more by others?";
+                            outputLabel.Text = "What belongs to you but is used more by others? \nTo open the safe, please put in the answer to the question in the lower Textbox and the command open safe in the upper one.";
                             answerTextBox.Visible = true;
                         }
                         else
@@ -61,9 +61,9 @@ namespace Escape_Room
                         }
                         else
                         {
-                            outputLabel.Text = "Congratulations, you opened the door and therefore won the game.";
+                            outputLabel.Text = "Congratulations, you opened the door and therefore won the game. To save your time, please enter safe highscore into the Textbox";
+                            answerTextBox.Visible = false;
                             gameRunning = false;
-                            doorOpen = true;
                         }
                         break;
 
@@ -83,6 +83,11 @@ namespace Escape_Room
                         }
                         break;
 
+                    case "save highscore":
+                        HighScoreForm highScoreForm = new HighScoreForm();
+                        highScoreForm.Show();
+                        break;
+
                     case "exit":
                         gameRunning = false;
                         this.Close();
@@ -97,6 +102,17 @@ namespace Escape_Room
             catch
             {
 
+            }
+        }
+
+        private void stopTimer_Tick(object sender, EventArgs e)
+        {
+            elapsedTime = elapsedTime + 0.1;
+            timeLabel.Text = elapsedTime.ToString("F1");
+
+            if (gameRunning == false)
+            {
+                stopTimer.Stop();
             }
         }
     }

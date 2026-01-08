@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.introductionLabel = new System.Windows.Forms.Label();
             this.instructionLabel = new System.Windows.Forms.Label();
@@ -35,6 +36,8 @@
             this.enterButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
             this.answerTextBox = new System.Windows.Forms.TextBox();
+            this.stopTimer = new System.Windows.Forms.Timer(this.components);
+            this.timeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // introductionLabel
@@ -100,12 +103,30 @@
             this.answerTextBox.TabIndex = 5;
             this.answerTextBox.Visible = false;
             // 
+            // stopTimer
+            // 
+            this.stopTimer.Interval = 10;
+            this.stopTimer.Tick += new System.EventHandler(this.stopTimer_Tick);
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.timeLabel.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.timeLabel.Location = new System.Drawing.Point(688, 113);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(100, 35);
+            this.timeLabel.TabIndex = 6;
+            this.timeLabel.Text = "0.0";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.answerTextBox);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.enterButton);
@@ -129,5 +150,7 @@
         private System.Windows.Forms.Button enterButton;
         private System.Windows.Forms.Label outputLabel;
         private System.Windows.Forms.TextBox answerTextBox;
+        private System.Windows.Forms.Timer stopTimer;
+        private System.Windows.Forms.Label timeLabel;
     }
 }
