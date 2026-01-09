@@ -33,8 +33,9 @@
             this.enterButton2 = new System.Windows.Forms.Button();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.timeTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.instructionLabel2 = new System.Windows.Forms.Label();
             this.rankingButton = new System.Windows.Forms.Button();
+            this.saveScoreButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rankingLabel
@@ -76,23 +77,23 @@
             this.timeTextBox.Size = new System.Drawing.Size(144, 30);
             this.timeTextBox.TabIndex = 11;
             // 
-            // label1
+            // instructionLabel2
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("MS Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(453, 85);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Please put in you name in the upper Textbox and your time in the lower and then p" +
+            this.instructionLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.instructionLabel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.instructionLabel2.Font = new System.Drawing.Font("MS Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instructionLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.instructionLabel2.Location = new System.Drawing.Point(12, 9);
+            this.instructionLabel2.Name = "instructionLabel2";
+            this.instructionLabel2.Size = new System.Drawing.Size(453, 85);
+            this.instructionLabel2.TabIndex = 12;
+            this.instructionLabel2.Text = "Please put in you name in the upper Textbox and your time in the lower and then p" +
     "ress enter.";
             // 
             // rankingButton
             // 
             this.rankingButton.Font = new System.Drawing.Font("MS Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rankingButton.Location = new System.Drawing.Point(227, 235);
+            this.rankingButton.Location = new System.Drawing.Point(138, 317);
             this.rankingButton.Name = "rankingButton";
             this.rankingButton.Size = new System.Drawing.Size(175, 30);
             this.rankingButton.TabIndex = 13;
@@ -100,14 +101,26 @@
             this.rankingButton.UseVisualStyleBackColor = true;
             this.rankingButton.Click += new System.EventHandler(this.rankingButton_Click);
             // 
+            // saveScoreButton
+            // 
+            this.saveScoreButton.Font = new System.Drawing.Font("MS Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveScoreButton.Location = new System.Drawing.Point(227, 235);
+            this.saveScoreButton.Name = "saveScoreButton";
+            this.saveScoreButton.Size = new System.Drawing.Size(175, 30);
+            this.saveScoreButton.TabIndex = 14;
+            this.saveScoreButton.Text = "Save Score";
+            this.saveScoreButton.UseVisualStyleBackColor = true;
+            this.saveScoreButton.Click += new System.EventHandler(this.saveScoreButton_Click);
+            // 
             // HighScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(477, 427);
+            this.Controls.Add(this.saveScoreButton);
             this.Controls.Add(this.rankingButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.instructionLabel2);
             this.Controls.Add(this.timeTextBox);
             this.Controls.Add(this.enterButton2);
             this.Controls.Add(this.nameTextBox);
@@ -126,7 +139,8 @@
         private System.Windows.Forms.Button enterButton2;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox timeTextBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label instructionLabel2;
         private System.Windows.Forms.Button rankingButton;
+        private System.Windows.Forms.Button saveScoreButton;
     }
 }
