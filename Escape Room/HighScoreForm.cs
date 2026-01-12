@@ -33,30 +33,40 @@ namespace Escape_Room
 
         private void enterButton2_Click(object sender, EventArgs e)
         {
-            string name = nameTextBox.Text;
-            double time = double.Parse(timeTextBox.Text);
-
-            players.Add(new Challenger { Name = name, Time = time });
-            for (int i = 0; i < players.Count; i++)
+            try
             {
-                rankingLabel.Text += players[i].Name + " " + players[i].Time + "      ";
+                string name = nameTextBox.Text;
+                double time = double.Parse(timeTextBox.Text);
+
+                players.Add(new Challenger { Name = name, Time = time });
+                for (int i = 0; i < players.Count; i++)
+                {
+                    rankingLabel.Text += players[i].Name + " " + players[i].Time + "      ";
+                }
+                nameTextBox.Clear();
+                timeTextBox.Clear();
             }
+            catch { }
         }
 
         private void rankingButton_Click(object sender, EventArgs e)
         {
+            rankingLabel.Visible = true;
+            nameTextBox.Visible = false;
+            timeTextBox.Visible = false;
+            enterButton2.Visible = false;
+            saveScoreButton.Visible = false;
             players.Clear();
+            rankingLabel.Text = "";
 
             string[] lines = File.ReadAllLines(filePath);
 
-            string name;
-            int time;
             for (int i = 0; i < lines.Length; i = i + 2)
             {
-                name = lines[i];
-                //time = Convert.ToInt16(lines[i + 1]);
+                string name = lines[i];
+                double time = double.Parse(lines[i + 1]);
                 players.Add(new Challenger { Name = name, Time = time });
-                rankingLabel.Text = $"{name[i]}\n";
+                rankingLabel.Text += $"{name}\n";
                 rankingLabel.Text += $"{time}\n";
             }
         }
@@ -64,15 +74,15 @@ namespace Escape_Room
         private void saveScoreButton_Click(object sender, EventArgs e)
         {
             instructionLabel2.Visible = false;
-            rankingLabel.Visible = true;
-            File.WriteAllText(filePath, "");
+            
+            players = players.OrderBy(p => p.Time).ToList();
 
             using (StreamWriter writer = new StreamWriter(filePath))
             {
-                for (int i = 0; i < players.Count; i++)
+                foreach (var player in players)
                 {
-                    writer.WriteLine(players[i].Name);
-                    writer.WriteLine(players[i].Time);
+                    writer.WriteLine(player.Name);
+                    writer.WriteLine(player.Time);
                 }
             }
         }
