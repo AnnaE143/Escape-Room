@@ -13,9 +13,9 @@ namespace Escape_Room
 {
     public partial class HighScoreForm : Form
     {
-        string filePath = @"C:\DocumentsCP\rankingEscapeRoom.txt";
+        string filePath = @"C:\DocumentsCP\rankingEscapeRoom.txt"; //creates an external file to save scores
 
-        List<Challenger> players = new List<Challenger>
+        List<Challenger> players = new List<Challenger> //list to save scores in
         {
             new Challenger{Name = "A", Time = 20.3}
         };
@@ -27,8 +27,8 @@ namespace Escape_Room
 
         class Challenger
         {
-            public string Name { get; set; }
-            public double Time { get; set; }
+            public string Name { get; set; } //player name
+            public double Time { get; set; } //player time
         }
 
         private void enterButton2_Click(object sender, EventArgs e)

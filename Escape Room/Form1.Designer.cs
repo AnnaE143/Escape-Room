@@ -58,11 +58,11 @@
             // rulesButton
             // 
             this.rulesButton.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rulesButton.Location = new System.Drawing.Point(390, 377);
+            this.rulesButton.Location = new System.Drawing.Point(346, 377);
             this.rulesButton.Name = "rulesButton";
-            this.rulesButton.Size = new System.Drawing.Size(75, 38);
+            this.rulesButton.Size = new System.Drawing.Size(119, 38);
             this.rulesButton.TabIndex = 2;
-            this.rulesButton.Text = "Rules";
+            this.rulesButton.Text = "Instructions";
             this.rulesButton.UseVisualStyleBackColor = true;
             this.rulesButton.Click += new System.EventHandler(this.rulesButton_Click);
             // 

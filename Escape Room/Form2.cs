@@ -12,10 +12,10 @@ namespace Escape_Room
 {
     public partial class Form2 : Form
     {
-        Boolean gameRunning = true;
-        Boolean questionFound = false;
-        Boolean keyFound = false;
-        double elapsedTime;
+        Boolean gameRunning = true; //checks if the game is running for the timer
+        Boolean questionFound = false; //checks if the question was found for the 'search pipe' and 'open safe' commands
+        Boolean keyFound = false; //checks if the key was found for the 'open door' command
+        double elapsedTime; //contains the time
 
         public Form2()
         {
@@ -33,9 +33,10 @@ namespace Escape_Room
         {
             try
             {
-                string input = commandTextBox.Text;
-                string inputAnswer = answerTextBox.Text;
+                string input = commandTextBox.Text; //the input of the commands
+                string inputAnswer = answerTextBox.Text; //the input for the question answer
 
+                //the commands
                 switch (input)
                 {
                     case "look":
@@ -85,7 +86,7 @@ namespace Escape_Room
 
                     case "save highscore":
                         HighScoreForm highScoreForm = new HighScoreForm();
-                        highScoreForm.Show();
+                        highScoreForm.Show(); //opens the highscore ranking form
                         break;
 
                     case "exit":
@@ -101,7 +102,7 @@ namespace Escape_Room
             }
             catch
             {
-
+                outputLabel.Text = "Please pick one of the Commands listed above.";
             }
         }
 

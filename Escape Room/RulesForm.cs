@@ -19,6 +19,7 @@ namespace Escape_Room
 
         private void closeButton_Click(object sender, EventArgs e)
         {
+            //return to title form
             Close();
         }
     }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Final Project: Escape Room
+ * 13/01/2026
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,12 +23,14 @@ namespace Escape_Room
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //open the game form
             Form2 form2 = new Form2();
             form2.Show();
         }
 
         private void rulesButton_Click(object sender, EventArgs e)
         {
+            //open the instructions
             RulesForm rulesForm = new RulesForm();
             rulesForm.Show();
         }
