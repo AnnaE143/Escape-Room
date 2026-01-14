@@ -1,6 +1,6 @@
 ﻿namespace Escape_Room
 {
-    partial class RulesForm
+    partial class InstructionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RulesForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructionForm));
             this.closeButton = new System.Windows.Forms.Button();
             this.rulesLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             this.rulesLabel.Text = "To complete the Escape Room you have to make it out as fast as possible. \r\nTo do " +
     "this start by looking for the question that is going to help you open the safe.";
             // 
-            // RulesForm
+            // InstructionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -64,8 +64,9 @@
             this.Controls.Add(this.rulesLabel);
             this.Controls.Add(this.closeButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "RulesForm";
-            this.Text = "RulesForm";
+            this.Name = "InstructionForm";
+            this.Text = "Escape Room";
+            this.Load += new System.EventHandler(this.RulesForm_Load);
             this.ResumeLayout(false);
 
         }

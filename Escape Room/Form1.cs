@@ -31,7 +31,7 @@ namespace Escape_Room
         private void rulesButton_Click(object sender, EventArgs e)
         {
             //open the instructions
-            RulesForm rulesForm = new RulesForm();
+            InstructionForm rulesForm = new InstructionForm();
             rulesForm.Show();
         }
     }

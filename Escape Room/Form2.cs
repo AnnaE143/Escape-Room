@@ -46,7 +46,7 @@ namespace Escape_Room
                     case "search pipe":
                         if (questionFound == false)
                         {
-                            outputLabel.Text = "What belongs to you but is used more by others? \nTo open the safe, please put in the answer to the question in the lower Textbox and the command open safe in the upper one.";
+                            outputLabel.Text = "To open the safe, please put in the answer to the question in the lower Textbox and the command open safe in the upper one. The question is: 'What belongs to you but is used more by others?'";
                             answerTextBox.Visible = true;
                         }
                         else
@@ -62,7 +62,7 @@ namespace Escape_Room
                         }
                         else
                         {
-                            outputLabel.Text = "Congratulations, you opened the door and therefore won the game. To save your time, please enter safe highscore into the Textbox";
+                            outputLabel.Text = "Congratulations, you opened the door and therefore won the game. To save your time, please enter save highscore into the Textbox";
                             answerTextBox.Visible = false;
                             gameRunning = false;
                         }
@@ -111,6 +111,7 @@ namespace Escape_Room
             elapsedTime = elapsedTime + 0.1;
             timeLabel.Text = elapsedTime.ToString("F1");
 
+            //stops the timer as soon as the door is opened
             if (gameRunning == false)
             {
                 stopTimer.Stop();

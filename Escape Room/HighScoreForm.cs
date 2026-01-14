@@ -17,7 +17,6 @@ namespace Escape_Room
 
         List<Challenger> players = new List<Challenger> //list to save scores in
         {
-            new Challenger{Name = "A", Time = 20.3}
         };
 
         public HighScoreForm()
@@ -35,6 +34,7 @@ namespace Escape_Room
         {
             try
             {
+                //add the new player and time to the list
                 string name = nameTextBox.Text;
                 double time = double.Parse(timeTextBox.Text);
 
@@ -46,7 +46,10 @@ namespace Escape_Room
                 nameTextBox.Clear();
                 timeTextBox.Clear();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void rankingButton_Click(object sender, EventArgs e)
@@ -58,6 +61,8 @@ namespace Escape_Room
             saveScoreButton.Visible = false;
             players.Clear();
             rankingLabel.Text = "";
+
+            //read in the data from the external file
 
             string[] lines = File.ReadAllLines(filePath);
 
@@ -73,11 +78,12 @@ namespace Escape_Room
 
         private void saveScoreButton_Click(object sender, EventArgs e)
         {
+            //save the data to the external file
             instructionLabel2.Visible = false;
             
             players = players.OrderBy(p => p.Time).ToList();
 
-            using (StreamWriter writer = new StreamWriter(filePath))
+            using (StreamWriter writer = new StreamWriter(filePath, true))
             {
                 foreach (var player in players)
                 {

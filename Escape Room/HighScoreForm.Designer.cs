@@ -97,7 +97,7 @@
             this.rankingButton.Name = "rankingButton";
             this.rankingButton.Size = new System.Drawing.Size(175, 30);
             this.rankingButton.TabIndex = 13;
-            this.rankingButton.Text = "See Ranking";
+            this.rankingButton.Text = "See List";
             this.rankingButton.UseVisualStyleBackColor = true;
             this.rankingButton.Click += new System.EventHandler(this.rankingButton_Click);
             // 

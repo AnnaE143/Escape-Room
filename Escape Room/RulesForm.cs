@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Escape_Room
 {
-    public partial class RulesForm : Form
+    public partial class InstructionForm : Form
     {
-        public RulesForm()
+        public InstructionForm()
         {
             InitializeComponent();
         }
@@ -21,6 +21,11 @@ namespace Escape_Room
         {
             //return to title form
             Close();
+        }
+
+        private void RulesForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
